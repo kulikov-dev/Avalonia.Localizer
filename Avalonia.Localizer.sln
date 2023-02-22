@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Localizer", "Avalonia.Localizer\Avalonia.Localizer.csproj", "{35D170BD-F762-4C84-A2F4-D93707ACE185}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Localizer.Tests", "Avalonia.Localizer.Tests\Avalonia.Localizer.Tests.csproj", "{C5AFC455-7E65-4C99-984B-474B6AA1F11D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35D170BD-F762-4C84-A2F4-D93707ACE185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D170BD-F762-4C84-A2F4-D93707ACE185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D170BD-F762-4C84-A2F4-D93707ACE185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D170BD-F762-4C84-A2F4-D93707ACE185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AFC455-7E65-4C99-984B-474B6AA1F11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AFC455-7E65-4C99-984B-474B6AA1F11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AFC455-7E65-4C99-984B-474B6AA1F11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AFC455-7E65-4C99-984B-474B6AA1F11D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {281BF8D4-1A08-4CA2-A715-7B62B9528881}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+{
+  "Language": "Language",
+  "en-US": "English",
+  "sl-SL": "Slovenščina",
+  "EnumSample": "Enum converter example",
+  "car": "Car",
+  "plane": "Plane",
+  "bicycle": "Bycicle",
+  "SampleTranslate": "This is an example of text used for localization."
+}

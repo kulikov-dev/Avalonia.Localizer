@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:Avalonia.Localizer.Core.Converters"
+        xmlns:localization="clr-namespace:Avalonia.Localizer.Core.Localization"
+        xmlns:core="clr-namespace:Avalonia.Localizer.Core"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="250"
+        x:Class="Avalonia.Localizer.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        Width="500" Height="350"
+        Title="AvaloniaLocalizationExample">
+
+    <Window.Resources>
+        <converters:EnumDescriptionConverter x:Key="enumConverter" />
+        <converters:StringLocalizationConverter x:Key="stringConverter" />
+    </Window.Resources>
+
+<StackPanel Margin="10">
+        <Label Content="{localization:Localize Language}" Margin="0,0,10,0"/>
+        <ComboBox Name="cbLanguage" SelectionChanged="OnLanguageChanged" SelectedItem="{Binding Source={x:Static core:ProgramCore.Localizer}, Path=Language}" Items="{Binding Source={x:Static core:ProgramCore.Localizer}, Path=AvailableLanguages}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource stringConverter}}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="{localization:Localize EnumSample}" Margin="0,10,10,0"/>
+        <ComboBox Name="cbEnumSample" SelectedItem="{Binding SelectedSample}" Items="{Binding Samples}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource enumConverter}}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    <TextBlock FontSize="18" Margin="0,10,0,0" Text="{localization:Localize SampleTranslate}"/>
+</StackPanel>
+
+</Window>
