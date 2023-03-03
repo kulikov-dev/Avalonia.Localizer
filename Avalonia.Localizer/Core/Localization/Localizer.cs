@@ -64,7 +64,7 @@ namespace Avalonia.Localizer.Core.Localization
             {
                 if (_dict == null)
                 {
-                    throw new CultureNotFoundException("Localization packages don't initialized.");     // TODO учет кодов ошибок (возможно словарь с кодами и енамками)
+                    throw new CultureNotFoundException("Localization packages don't initialized.");
                 }
 
                 if (string.IsNullOrWhiteSpace(Language))
@@ -100,7 +100,7 @@ namespace Avalonia.Localizer.Core.Localization
 
             if (!assetsService.Exists(uri))
             {
-                throw new CultureNotFoundException("Missing a localization package.");     // TODO учет кодов ошибок (возможно словарь с кодами и енамками)
+                throw new CultureNotFoundException("Missing a localization package.");
             }
 
             using (var streamReader = new StreamReader(assetsService.Open(uri), Encoding.UTF8))
@@ -108,11 +108,11 @@ namespace Avalonia.Localizer.Core.Localization
                 var packageData = streamReader.ReadToEnd();
                 if (packageData == null)
                 {
-                    throw new DataException("Incorrect localization package format.");     // TODO учет кодов ошибок (возможно словарь с кодами и енамками)
+                    throw new DataException("Incorrect localization package format.");
                 }
 
                 var result = JsonConvert.DeserializeObject<ConcurrentDictionary<string, string>>(packageData);
-                _dict = result ?? throw new DataException("Incorrect localization package format.");        // TODO учет кодов ошибок (возможно словарь с кодами и енамками)
+                _dict = result ?? throw new DataException("Incorrect localization package format.");
             }
 
             Language = languageCode;

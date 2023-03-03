@@ -11,7 +11,7 @@ namespace Avalonia.Localizer.Tests.Fixtures
     public class LocalizationFixture : IDisposable
     {
         /// <summary>
-        /// Localization package for ru-Ru locale
+        /// Localization package for sl-SL locale
         /// </summary>
         public ConcurrentDictionary<string, string>? SlPackage { get; }
 
@@ -26,11 +26,11 @@ namespace Avalonia.Localizer.Tests.Fixtures
         /// <exception cref="CultureNotFoundException"> Missing localization packages in the Test Environment </exception>
         public LocalizationFixture()
         {
-            var ruSourceStr = ResourceHelper.ReadResourceAsString(System.Reflection.Assembly.GetExecutingAssembly(), "Assets.Localization", "ru-RU.json");
+            var ruSourceStr = ResourceHelper.ReadResourceAsString(System.Reflection.Assembly.GetExecutingAssembly(), "Assets.Localization", "sl-SL.json");
 
             if (ruSourceStr == null)
             {
-                throw new CultureNotFoundException("Missing ru-Ru localization package in the Test environment.");
+                throw new CultureNotFoundException("Missing sl-SL localization package in the Test environment.");
             }
 
             SlPackage = JsonConvert.DeserializeObject<ConcurrentDictionary<string, string>>(ruSourceStr);

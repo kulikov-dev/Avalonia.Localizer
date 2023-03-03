@@ -1,13 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ReactiveUI;
 
 namespace Avalonia.Localizer.ViewModels
 {
-    internal class MainWindowViewModel
+    /// <summary>
+    /// Main window view model
+    /// </summary>
+    internal class MainWindowViewModel : ReactiveObject
     {
-        public List<SampleEnum> Samples => Enum.GetValues<SampleEnum>().Cast<SampleEnum>().ToList();
+        /// <summary>
+        /// List of samples
+        /// </summary>
+        public List<SampleEnum> Samples => Enum.GetValues<SampleEnum>().ToList();
 
+        /// <summary>
+        /// Selected sample
+        /// </summary>
         public SampleEnum SelectedSample { get; set; }
     }
 }

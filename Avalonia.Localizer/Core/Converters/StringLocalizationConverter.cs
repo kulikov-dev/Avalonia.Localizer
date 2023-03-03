@@ -4,6 +4,9 @@ using Avalonia.Data.Converters;
 
 namespace Avalonia.Localizer.Core.Converters
 {
+    /// <summary>
+    /// Converter to use strings in XAML. Support localization.
+    /// </summary>
     internal class StringLocalizationConverter : IValueConverter
     {
         /// <inheritdoc/>

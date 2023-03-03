@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls.ApplicationLifetimes;
+﻿using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Headless;
 using Avalonia.ReactiveUI;
 using Avalonia.Threading;
@@ -21,7 +22,15 @@ namespace Avalonia.Localizer.Tests
 
         public static MainWindow GetMainWindow() => (MainWindow)GetApp().MainWindow;
 
-        public static IClassicDesktopStyleApplicationLifetime GetApp() => Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime;
+        public static IClassicDesktopStyleApplicationLifetime GetApp()
+        {
+            if (Application.Current?.ApplicationLifetime is not IClassicDesktopStyleApplicationLifetime result)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return result;
+        }
 
         public static AppBuilder BuildAvaloniaApp() =>
             AppBuilder

@@ -1,4 +1,5 @@
-﻿using Avalonia.Localizer.Tests.Fixtures;
+﻿using Avalonia.Localizer.Core;
+using Avalonia.Localizer.Tests.Fixtures;
 
 namespace Avalonia.Localizer.Tests.Tests
 {
@@ -25,7 +26,7 @@ namespace Avalonia.Localizer.Tests.Tests
         public void ValidatePackagesComposition()
         {
             _ = AvaloniaApp.GetApp();
-            var languages = Core.ProgramCore.Localizer.AvailableLanguages;
+            var languages = ProgramCore.Localizer.AvailableLanguages;
 
             Assert.Equal(2, languages.Count);
             Assert.Contains("en-US", languages);
@@ -37,10 +38,10 @@ namespace Avalonia.Localizer.Tests.Tests
         {
             _ = AvaloniaApp.GetApp();
 
-            Core.ProgramCore.Localizer.SwitchLanguage("sl-SL");
+            ProgramCore.Localizer.SwitchLanguage("sl-SL");
             foreach (var item in _fixture.SlPackage!)
             {
-                Assert.Equal(item.Value, Core.ProgramCore.Localizer[item.Key]);
+                Assert.Equal(item.Value, ProgramCore.Localizer[item.Key]);
             }
         }
 
@@ -49,7 +50,7 @@ namespace Avalonia.Localizer.Tests.Tests
         {
             _ = AvaloniaApp.GetApp();
 
-            Core.ProgramCore.Localizer.SwitchLanguage("en-US");
+            ProgramCore.Localizer.SwitchLanguage("en-US");
             foreach (var item in _fixture.EnPackage!)
             {
                 Assert.Equal(item.Value, Core.ProgramCore.Localizer[item.Key]);
@@ -61,19 +62,19 @@ namespace Avalonia.Localizer.Tests.Tests
         {
             _ = AvaloniaApp.GetApp();
 
-            Core.ProgramCore.Localizer.SwitchLanguage("en-US");
+            ProgramCore.Localizer.SwitchLanguage("en-US");
 
             var firstItem = _fixture.EnPackage?.FirstOrDefault();
 
             Assert.NotNull(firstItem);
-            Assert.Equal(firstItem!.Value.Value, Core.ProgramCore.Localizer[firstItem.Value.Key]);
+            Assert.Equal(firstItem!.Value.Value, ProgramCore.Localizer[firstItem.Value.Key]);
 
             Core.ProgramCore.Localizer.SwitchLanguage("sl-SL");
 
             firstItem = _fixture.SlPackage?.FirstOrDefault();
 
             Assert.NotNull(firstItem);
-            Assert.Equal(firstItem!.Value.Value, Core.ProgramCore.Localizer[firstItem.Value.Key]);
+            Assert.Equal(firstItem!.Value.Value, ProgramCore.Localizer[firstItem.Value.Key]);
         }
     }
 }

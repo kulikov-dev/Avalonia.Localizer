@@ -1,6 +1,8 @@
 {
+  "Language": "Jezik",
   "en-US": "English",
   "sl-SL": "Slovenščina",
+  "EnumSample": "Primer pretvornika enum",
   "car": "Avto",
   "plane": "Letalo",
   "bicycle": "Kolo",

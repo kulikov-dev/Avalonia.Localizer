@@ -1,5 +1,10 @@
 {
-  "TablesMenuCaption": "Tables",
+  "Language": "Language",
   "en-US": "English",
-  "ru-RU": "Русский"
+  "sl-SL": "Slovenščina",
+  "EnumSample": "Enum converter example",
+  "car": "Car",
+  "plane": "Plane",
+  "bicycle": "Bycicle",
+  "SampleTranslate": "This is an example of text used for localization."
 }

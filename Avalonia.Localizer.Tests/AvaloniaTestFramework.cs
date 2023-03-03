@@ -2,7 +2,7 @@
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-[assembly: TestFramework("Avalonia.Localizer.AvaloniaUiTestFramework", "Avalonia.Localizer")]
+[assembly: TestFramework("Avalonia.Localizer.Tests.AvaloniaUiTestFramework", "Avalonia.Localizer.Tests")]
 [assembly: CollectionBehavior(CollectionBehavior.CollectionPerAssembly, DisableTestParallelization = false, MaxParallelThreads = 1)]
 namespace Avalonia.Localizer.Tests
 {
