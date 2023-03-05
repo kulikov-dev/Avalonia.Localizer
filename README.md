@@ -1,6 +1,5 @@
 ## Avalonia localizer
-  The sample project with the ready-to-use localization provider, allowing to make dynamic runtime localization using the [AvaloniaUI](https://github.com/AvaloniaUI/Avalonia) framework.
-  The idea is to create JSON files assets. Each file contain key and translation according to the locale:
+  The sample project comes with a ready-to-use localization provider, allowing for dynamic runtime localization using the  [AvaloniaUI](https://github.com/AvaloniaUI/Avalonia) framework. The idea is to create JSON files as assets. Each file contains a key and translation according to the locale:
 ``` JSON
  {
   "EnumSample": "Primer pretvornika enum",
@@ -39,7 +38,7 @@ var localized = ProgramCore.Localizer["plane"];
     
  EnumDescriptionConverter.GetEnumDescription(SampleEnum.Car);
 ```
-Thanks to bindings we can change the locale in the runtime just with the one line of code:
+Thanks to bindings, we can change the locale in the runtime with just one line of code:
 ``` C#
 ProgramCore.Localizer.SwitchLanguage("en-US");
 ```  
