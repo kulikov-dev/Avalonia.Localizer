@@ -33,7 +33,7 @@ namespace Avalonia.Localizer.Core.Converters
         /// </summary>
         /// <param name="enumValue"> Enum value </param>
         /// <returns> Enum description </returns>
-        private static string GetEnumDescription(Enum enumValue)
+        public static string GetEnumDescription(Enum enumValue)
         {
             var enumValueStr = enumValue.ToString();
             var fieldInfo = enumValue.GetType().GetField(enumValueStr);
